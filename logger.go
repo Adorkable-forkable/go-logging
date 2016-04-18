@@ -170,6 +170,11 @@ func (l *Logger) log(lvl Level, format *string, args ...interface{}) {
 	defaultBackend.Log(lvl, 2+l.ExtraCalldepth, record)
 }
 
+// Log specify a log by Level
+func (l *Logger) Log(lvl Level, format string, args ...interface{}) {
+	l.log(lvl, &format, args...)
+}
+
 // Fatal is equivalent to l.Critical(fmt.Sprint()) followed by a call to os.Exit(1).
 func (l *Logger) Fatal(args ...interface{}) {
 	l.log(CRITICAL, nil, args...)
