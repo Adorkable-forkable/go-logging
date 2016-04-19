@@ -27,6 +27,20 @@ func SetBackend(backends ...Backend) LeveledBackend {
 	return defaultBackend
 }
 
+// SetBackendFromArray replaces the backend currently set with the given new logging
+// backend.
+func SetBackendFromArray(backends []Backend) LeveledBackend {
+	var backend Backend
+	if len(backends) == 1 {
+		backend = backends[0]
+	} else {
+		backend = MultiLogger(backends...)
+	}
+
+	defaultBackend = AddModuleLevel(backend)
+	return defaultBackend
+}
+
 // SetLevel sets the logging level for the specified module. The module
 // corresponds to the string specified in GetLogger.
 func SetLevel(level Level, module string) {
