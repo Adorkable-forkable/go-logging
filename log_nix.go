@@ -32,15 +32,17 @@ var (
 		CRITICAL: ColorSeq(ColorMagenta),
 		ERROR:    ColorSeq(ColorRed),
 		WARNING:  ColorSeq(ColorYellow),
-		NOTICE:   ColorSeq(ColorGreen),
-		DEBUG:    ColorSeq(ColorCyan),
+		INFO: 	  ColorSeq(ColorWhite),
+		DEBUG:    ColorSeq(ColorGreen),
+		VERBOSE:  ColorSeq(ColorGray),
 	}
 	boldcolors = []string{
 		CRITICAL: ColorSeqBold(ColorMagenta),
 		ERROR:    ColorSeqBold(ColorRed),
 		WARNING:  ColorSeqBold(ColorYellow),
-		NOTICE:   ColorSeqBold(ColorGreen),
-		DEBUG:    ColorSeqBold(ColorCyan),
+		INFO:     ColorSeqBold(ColorWhite),
+		DEBUG:    ColorSeqBold(ColorGreen),
+		VERBOSE:  ColorSeqBold(ColorGray),
 	}
 )
 

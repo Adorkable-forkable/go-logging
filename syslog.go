@@ -41,11 +41,11 @@ func (b *SyslogBackend) Log(level Level, calldepth int, rec *Record) error {
 		return b.Writer.Err(line)
 	case WARNING:
 		return b.Writer.Warning(line)
-	case NOTICE:
-		return b.Writer.Notice(line)
 	case INFO:
-		return b.Writer.Info(line)
+		return b.Writer.Notice(line)
 	case DEBUG:
+		return b.Writer.Info(line)
+	case VERBOSE:
 		return b.Writer.Debug(line)
 	default:
 	}
