@@ -23,6 +23,7 @@ const (
 	ColorBlue
 	ColorMagenta
 	ColorCyan
+	ColorGray
 	ColorWhite
 )
 
